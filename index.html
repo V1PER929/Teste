@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checagem de Notícias</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef2f7;
+}
+
+header{
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    font-size:40px;
+}
+
+header p{
+    margin-top:10px;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:35px;
+    padding:40px;
+}
+
+.card{
+    width:320px;
+    height:430px;
+    perspective:1000px;
+    cursor:pointer;
+}
+
+.card-inner{
+    width:100%;
+    height:100%;
+    transition:.8s;
+    transform-style:preserve-3d;
+    position:relative;
+}
+
+.card.flip .card-inner{
+    transform:rotateY(180deg);
+}
+
+.front,.back{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+
+    backface-visibility:hidden;
+}
+
+.front{
+    background:white;
+}
+
+.back{
+    background:#16a34a;
+    color:white;
+    transform:rotateY(180deg);
+}
+
+img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+}
+
+.front h2{
+    color:#d62828;
+    margin-bottom:10px;
+}
+
+.back h2{
+    margin-bottom:10px;
+}
+
+.back p{
+    line-height:1.5;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#1e3a8a;
+    color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🔎 Checagem de Notícias</h1>
+
+<p>Clique nos cartões para descobrir a verdade.</p>
+
+</header>
+
+<div class="container">
+
+<!-- CARD 1 -->
+
+<div class="card" onclick="virar(this)">
+
+<div class="card-inner">
+
+<div class="front">
+
+<img src="https://picsum.photos/id/1025/400/200">
+
+<div class="info">
+
+<h2>❌ Vacinas possuem chips para controlar pessoas.</h2>
+
+<p>Clique para verificar.</p>
+
+</div>
+
+</div>
+
+<div class="back">
+
+<img src="https://picsum.photos/id/1040/400/200">
+
+<div class="info">
+
+<h2>✅ Informação verdadeira</h2>
+
+<p>Não existem chips em vacinas. Elas contêm apenas ingredientes destinados à imunização, conforme pesquisas científicas.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="card" onclick="virar(this)">
+
+<div class="card-inner">
+
+<div class="front">
+
+<img src="https://picsum.photos/id/1015/400/200">
+
+<div class="info">
+
+<h2>❌ A Terra é plana.</h2>
+
+<p>Clique para verificar.</p>
+
+</div>
+
+</div>
+
+<div class="back">
+
+<img src="https://picsum.photos/id/1011/400/200">
+
+<div class="info">
+
+<h2>✅ Informação verdadeira</h2>
+
+<p>A Terra possui formato aproximadamente esférico, comprovado por satélites, observações astronômicas e missões espaciais.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="card" onclick="virar(this)">
+
+<div class="card-inner">
+
+<div class="front">
+
+<img src="https://picsum.photos/id/1080/400/200">
+
+<div class="info">
+
+<h2>❌ Beber água com limão cura qualquer doença.</h2>
+
+<p>Clique para verificar.</p>
+
+</div>
+
+</div>
+
+<div class="back">
+
+<img src="https://picsum.photos/id/1060/400/200">
+
+<div class="info">
+
+<h2>✅ Informação verdadeira</h2>
+
+<p>Água com limão pode fazer parte de uma alimentação saudável, mas não substitui tratamentos médicos.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 4 -->
+
+<div class="card" onclick="virar(this)">
+
+<div class="card-inner">
+
+<div class="front">
+
+<img src="https://picsum.photos/id/180/400/200">
+
+<div class="info">
+
+<h2>❌ Celulares causam câncer imediatamente.</h2>
+
+<p>Clique para verificar.</p>
+
+</div>
+
+</div>
+
+<div class="back">
+
+<img src="https://picsum.photos/id/119/400/200">
+
+<div class="info">
+
+<h2>✅ Informação verdadeira</h2>
+
+<p>Até o momento, não há evidências científicas conclusivas de que o uso comum de celulares provoque câncer.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 5 -->
+
+<div class="card" onclick="virar(this)">
+
+<div class="card-inner">
+
+<div class="front">
+
+<img src="https://picsum.photos/id/292/400/200">
+
+<div class="info">
+
+<h2>❌ Comer açúcar deixa toda criança hiperativa.</h2>
+
+<p>Clique para verificar.</p>
+
+</div>
+
+</div>
+
+<div class="back">
+
+<img src="https://picsum.photos/id/433/400/200">
+
+<div class="info">
+
+<h2>✅ Informação verdadeira</h2>
+
+<p>Estudos científicos indicam que o açúcar, por si só, não causa hiperatividade nas crianças.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 6 -->
+
+<div class="card" onclick="virar(this)">
+
+<div class="card-inner">
+
+<div class="front">
+
+<img src="https://picsum.photos/id/870/400/200">
+
+<div class="info">
+
+<h2>❌ Relâmpagos nunca caem duas vezes no mesmo lugar.</h2>
+
+<p>Clique para verificar.</p>
+
+</div>
+
+</div>
+
+<div class="back">
+
+<img src="https://picsum.photos/id/903/400/200">
+
+<div class="info">
+
+<h2>✅ Informação verdadeira</h2>
+
+<p>Relâmpagos podem atingir o mesmo local diversas vezes, especialmente edifícios altos e torres.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>📚 Antes de compartilhar uma notícia, verifique se ela foi publicada por fontes confiáveis.</p>
+
+</footer>
+
+<script>
+
+function virar(card){
+
+card.classList.toggle("flip");
+
+}
+
+</script>
+
+</body>
+</html>
